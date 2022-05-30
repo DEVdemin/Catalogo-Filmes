@@ -10,8 +10,12 @@ select  id_usuario		id,
     where ds_email		= 'admin@admin.com.br'
     and  ds_senha		= '1234';
     
-insert into tb_filme (id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel, img_filme)
-values(1, 'Harry Potter e a Camara Secreta', 'Filme bom', 8.2, '2012-02-11', true, '/strorage/filmes/234567.jpg');
+insert into tb_filme (id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel)
+values(1, 'Harry Potter e a Camara Secreta', 'Filme bom', 8.2, '2012-02-11', true);
+
+update tb_filme
+set img_filme           = '/storage/filme/asdf.jp'
+where id_filme =1;
 
 
 update tb_filme
@@ -20,8 +24,13 @@ update tb_filme
     vl_avaliacao		= 9.5,
     dt_lancamento		= '2010-05-03',
     bt_disponivel		= true,
-    img_filme			='strorage/filmes/asdfasdf.jp'
 where id_filme = 1;
+
+--Alterar Imagem--
+update tb_filme
+set img_filme = '/storage/filme/asdfasdf.jp',
+where id_filme  = ?;
+
 
 delete from tb_filme
 where id_filme 	= 1;
